@@ -14,6 +14,20 @@ def binarySearch(A):
     
   return False 
 
-A = [ 0, 1, 2, 3, 4, 5 ]
+def binarySearchRecursive(A, l, r):
+  if l > r:
+    return False
+  
+  mid = (l + r) // 2
+  
+  if A[mid] == mid:
+    return True 
+  elif A[mid] > mid:
+    return binarySearchRecursive(A, l, mid - 1)
+  else:
+    return binarySearchRecursive(A, mid + 1, r)
+
+A = [ 0, 2, 3, 4, 5, 8 ]
 
 print(binarySearch(A))
+print(binarySearchRecursive(A, 0, len(A)-1))
