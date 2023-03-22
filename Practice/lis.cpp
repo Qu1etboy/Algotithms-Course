@@ -17,9 +17,11 @@ int main() {
     dp[i] = mx + 1;
   }
 
+  int ans = 0;
   for (int i = 0; i < n; i++) {
     cout << dp[i] << " ";
+    ans = max(dp[i], ans);
   }
 
-  cout << "\n" << dp[n - 1] << endl;
+  cout << "\n" << ans << endl;
 }
